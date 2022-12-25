@@ -1,0 +1,208 @@
+:root {
+  /* Colors */
+
+  /* Primary */
+
+  --Violet: hsl(257, 40%, 49%);
+  --Soft-Magenta: hsl(300, 69%, 71%);
+
+  /*HEADING*/
+  /*Weight 400 600*/
+  --Popins-font: "Poppins", sans-serif;
+
+  /*BODY*/
+  /*Weight 400*/
+  --Open-Sans-font: "Open Sans", sans-serif;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  background-color: var(--Violet);
+}
+
+.logo {
+  position: absolute;
+  top: 2rem;
+  left: 1.9rem;
+  width: 134px;
+}
+
+.illustration {
+  position: absolute;
+  top: 8rem;
+  left: 2.5rem;
+  width: 300px;
+  height: 210px;
+  margin-bottom: 1rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+h1 {
+  font-family: var(--Popins-font);
+  font-size: 1.5rem;
+  color: #fff;
+  width: 16rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.description {
+  padding: 0 1rem;
+  font-family: var(--Open-Sans-font);
+  color: #fff;
+  width: 21rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.button {
+  width: 14rem;
+  height: 3rem;
+  border-radius: 1.5rem;
+  border: 0;
+  cursor: pointer;
+  font-family: var(--Popins-font);
+  background-color: #fff;
+  color: var(--Violet);
+  font-size: 0.9rem;
+  margin-bottom: 4rem;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: violet;
+}
+
+.social-network {
+  display: flex;
+  padding: 0;
+  list-style-type: none;
+  margin-bottom: 2.5rem;
+}
+
+.social-network a {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  margin-right: 0.7rem;
+}
+
+.social-network a:hover {
+  border-color: violet;
+  color: violet;
+}
+
+/*MEDIA QUERIES*/
+
+/*1440px*/
+@media (min-width: 1440px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .logo {
+    left: 4rem;
+    top: 4rem;
+    width: 214px;
+  }
+
+  .illustration {
+    width: 709px;
+    height: 506px;
+    margin-top: 4rem;
+    margin-left: 1rem;
+  }
+
+  section {
+    margin-top: -50rem;
+    margin-left: 60rem;
+    margin-left: 52rem;
+    width: 35rem;
+    align-items: flex-start;
+  }
+
+  h1 {
+    width: 26rem;
+    text-align: left;
+    font-size: 2.2rem;
+  }
+
+  .description {
+    text-align: left;
+    padding: 0;
+    width: 29rem;
+  }
+
+  .button {
+    width: 12rem;
+    font-size: 1rem;
+  }
+
+  .social-network {
+    position: absolute;
+    bottom: 0;
+    right: 5rem;
+  }
+
+  .social-network a {
+    width: 40px;
+    height: 40px;
+  }
+}
