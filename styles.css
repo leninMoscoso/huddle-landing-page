@@ -13,6 +13,11 @@
   /*BODY*/
   /*Weight 400*/
   --Open-Sans-font: "Open Sans", sans-serif;
+
+  /* Block-flow */
+  --block-flow-sm: min(2rem,  4vh);
+  --block-flow-md: min(4rem,  8vh);
+  --block-flow-lg: min(8rem, 16vh);
 }
 
 /*
@@ -65,6 +70,11 @@ body {
   color: #fff;
 }
 
+:is(body, .block-flow) > * + * {
+  margin-block-start:
+    var(--block-flow, var(--block-flow-md) );
+}
+
 .grid-wrapper {
   --min: 35rem;
   
@@ -84,6 +94,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
 h1 {
@@ -100,8 +111,7 @@ h1 {
   font-size: clamp(1rem, 3vw, 1.2rem);
   text-align: center;
 
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: .5rem;
 }
 
 .button {
@@ -115,7 +125,7 @@ h1 {
   color: var(--Violet);
   font-size: clamp(.8rem, 3vw, 1.1rem);
 
-  margin-bottom: 4rem;
+  margin-bottom: 3rem;
 }
 
 .button:hover {
@@ -140,8 +150,6 @@ img[alt="background-mobile-image"] {
   padding: 0;
   list-style-type: none;
   margin-bottom: 2.5rem;
-
-  /* margin-top: 3rem; */
 }
 
 .social-network a {
@@ -186,24 +194,18 @@ img[alt="background-mobile-image"] {
   }
 
   .description {
-    margin-top: min(1.4rem, 2.8vh);
     padding-inline: .5rem;
-
-    margin-left: 7rem;
-    
+    margin-left: 7rem;    
   }
 
   button {
     align-self: stretch;
-    margin-top: min(1.3rem, 2.6vh);
     margin-left: min(7.3rem, 14.6vw);
  }
 
  .social-network  {
   align-self: end;
- 
-  margin-top: 11.4rem;
+  margin-top: 7.5rem;
   margin-right: 1.3rem;
  }
-
 }
