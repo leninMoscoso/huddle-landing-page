@@ -13,6 +13,11 @@
   /*BODY*/
   /*Weight 400*/
   --Open-Sans-font: "Open Sans", sans-serif;
+
+  /*Block-flow*/
+  --block-flow-sm: min(2rem,  4vh);
+  --block-flow-md: min(4rem,  8vh);
+  --block-flow-lg: min(8rem, 16vh);
 }
 
 /*
@@ -58,69 +63,79 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+/*************************************************************************************************/
 
 body {
   background-color: var(--Violet);
+  color: #fff;
 }
 
-.logo {
+.grid-wrapper {
+  --min: 35rem;
+  
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+main > div {
   position: absolute;
-  top: 2rem;
-  left: 1.9rem;
-  width: 134px;
+  top: clamp(7.33rem, 13.8vw, 12rem);
+
+
+  padding-inline: clamp(2rem, 3vw, 4rem);
 }
 
-.illustration {
-  position: absolute;
-  top: 8rem;
-  left: 2.5rem;
-  width: 300px;
-  height: 210px;
-  margin-bottom: 1rem;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
+section > * {
   justify-content: center;
+}
+
+section button {
   align-items: center;
-  margin-top: 1rem;
 }
 
 h1 {
   font-family: var(--Popins-font);
-  font-size: 1.5rem;
-  color: #fff;
-  width: 16rem;
-  text-align: center;
-  margin-bottom: 1rem;
+  font-size: clamp(1rem, 5vw, 2.5rem);
+
+
+  text-align: center; 
 }
 
 .description {
-  padding: 0 1rem;
   font-family: var(--Open-Sans-font);
-  color: #fff;
-  width: 21rem;
+  font-size: clamp(1rem, 3vw, 1.2rem);
+
   text-align: center;
-  margin-bottom: 1.5rem;
 }
 
 .button {
-  width: 14rem;
-  height: 3rem;
-  border-radius: 1.5rem;
+  width: clamp(6.5rem, 70vw, 12.3rem);
+  height: clamp(2.5rem, 5vw, 3.4rem);
+  border-radius: 2rem;
   border: 0;
   cursor: pointer;
   font-family: var(--Popins-font);
   background-color: #fff;
   color: var(--Violet);
-  font-size: 0.9rem;
-  margin-bottom: 4rem;
+  font-size: clamp(.8rem, 3vw, 1.1rem);
 }
 
 .button:hover {
   color: #fff;
   background-color: violet;
+}
+
+img[alt="background-mobile-image"] {
+  width: 100%;
+}
+
+.logo {
+  width: clamp(3rem, 40%, 13rem);
+  position: absolute;
+  top: clamp(1rem, 3.8vw, 4rem);
+
+  margin-left: min(100% - 9rem, 5vw);
 }
 
 .social-network {
@@ -137,10 +152,10 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 30px;
-  height: 30px;
+  width: clamp(25px, 5vw, 40px);
+  height: clamp(25px, 5vw, 40px);
   text-decoration: none;
-  margin-right: 0.7rem;
+  margin-right: 1rem;
 }
 
 .social-network a:hover {
@@ -148,61 +163,18 @@ h1 {
   color: violet;
 }
 
-/*MEDIA QUERIES*/
+.social-network i {
+  font-size: clamp(15px, 4vw, 20px);
+}
 
-/*1440px*/
-@media (min-width: 1440px) {
-  .container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
 
-  .logo {
-    left: 4rem;
-    top: 4rem;
-    width: 214px;
-  }
-
-  .illustration {
-    width: 709px;
-    height: 506px;
-    margin-top: 4rem;
-    margin-left: 1rem;
-  }
-
-  section {
-    margin-top: -50rem;
-    margin-left: 60rem;
-    margin-left: 52rem;
-    width: 35rem;
-    align-items: flex-start;
-  }
-
-  h1 {
-    width: 26rem;
+@media (min-width: 1200px) {
+  h1, .description {
     text-align: left;
-    font-size: 2.2rem;
-  }
-
-  .description {
-    text-align: left;
-    padding: 0;
-    width: 29rem;
+    margin-left: 7rem;
   }
 
   .button {
-    width: 12rem;
-    font-size: 1rem;
-  }
-
-  .social-network {
-    position: absolute;
-    bottom: 0;
-    right: 5rem;
-  }
-
-  .social-network a {
-    width: 40px;
-    height: 40px;
+    margin-left: 7rem;
   }
 }
