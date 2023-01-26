@@ -9,3 +9,5 @@ This is a solution to the "[Huddle landing page with a single introductory secti
 [Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
 
 **To do this challenge, you need a basic understanding of HTML and CSS.**
+
+[![My Skills](https://skillicons.dev/icons?i=html,css)](https://skillicons.dev)
